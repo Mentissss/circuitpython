@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
@@ -25,9 +26,8 @@ jobs:
       run: |
         make -C ports/raspberrypi BOARD=raspberry_pi_pico -j4
 
-   - name: Upload UF2
-  uses: actions/upload-artifact@v4
-  with:
-    name: firmware-uf2
-    path: ports/raspberrypi/build-raspberry_pi_pico/firmware.uf2
-
+    - name: Upload UF2
+      uses: actions/upload-artifact@v4
+      with:
+        name: firmware-uf2
+        path: ports/raspberrypi/build-raspberry_pi_pico/firmware.uf2
