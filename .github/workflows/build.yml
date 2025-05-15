@@ -25,8 +25,9 @@ jobs:
       run: |
         make -C ports/raspberrypi BOARD=raspberry_pi_pico -j4
 
-    - name: Upload UF2
-      uses: actions/upload-artifact@v3
-      with:
-        name: firmware-uf2
-        path: ports/raspberrypi/build-raspberry_pi_pico/firmware.uf2
+   - name: Upload UF2
+  uses: actions/upload-artifact@v4
+  with:
+    name: firmware-uf2
+    path: ports/raspberrypi/build-raspberry_pi_pico/firmware.uf2
+
